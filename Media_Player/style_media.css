@@ -1,0 +1,405 @@
+@charset "UTF-8";
+
+:root {
+  --primary-color-1: #333;
+  --primary-color-2: #00ff33;
+  --primary-color-2-darkest: color-mix(in srgb,var(--primary-color-2),#000 15%);
+  --primary-color-3: #999;
+  --start-nav-text-shadow: #222;
+  
+  --primary-color-4: var(--primary-color-1);
+  --primary-color-5: #ccc;
+  --table-color-1: #222;
+  --table-color-2: #444;
+}
+
+/* ------------------------------------------
+  GENERAL BASIC SETTINGS  
+    (smartphone > 640px)
+-------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-color-1);
+  margin: 1em 3rem;
+}
+/*-----------------------------------------------------   
+ Media Player
+------------------------------------------------------*/
+.container h1 {
+  color: var(--primary-color-2);
+}
+/* choice audio or video */
+.audio-video-app {
+  display: flex;
+  justify-content: center;
+}
+.audio-video-app a {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: 50px;
+  color: var(--primary-color-3);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 1.5s; 
+}
+.audio-video-app a:hover {
+  background-color: var(--primary-color-1);
+  color: var(--primary-color-2);
+  text-shadow: 0.3em 0.2em var(--start-nav-text-shadow);
+}  
+.audio-video-app a.active {
+  background-color: var(--primary-color-1);
+  color: var(--primary-color-2);
+}  
+/* MAIN */
+/* file upload */
+.fileUpload {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.fileUpload input {
+  width: 75%;
+  color: var(--primary-color-3);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-3);
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.fileUpload input[type=file]::file-selector-button {
+  background-color: var(--primary-color-1);
+  color: var(--primary-color-3);
+  border-radius: 2px;
+  border: 1px solid var(--primary-color-3);
+  padding: 3px 4px;
+  box-shadow: 1px 1px var(--primary-color-3);
+  transition: 1s;
+}
+.fileUpload input[type=file]::file-selector-button:hover {
+  color: var(--primary-color-2);
+  box-shadow: none;
+}
+/* button control panel */
+#controls {
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#controls button {
+  margin: 5px;            
+  width: auto;
+  cursor: pointer;
+  color: var(--primary-color-3);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-3);
+  padding: 5px 10px;
+  border-radius: 2px;
+  box-shadow: 2px 2px var(--primary-color-3);
+  transition: 1s; 
+}
+#controls i {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#controls button:hover {
+  box-shadow: none;
+}
+#controls button:focus {
+  box-shadow: none;
+}
+.speedRate button {
+  border: 1px solid var(--primary-color-2) !important;
+}
+/* Playlist */
+.media-playlist {
+  margin-bottom: 20px;
+  box-shadow: 0.3em 0.2em var(--start-nav-text-shadow);
+  border: 1px solid var(--start-nav-text-shadow);
+}
+.media-playlist h2 {
+  padding: 5px;
+  color: var(--primary-color-3);
+  font-size: 18px;
+  border-bottom: 1px solid var(--start-nav-text-shadow);
+}
+.media-playlist ul {
+  border: 1px solid var(--start-nav-text-shadow);
+}
+.media-playlist li {
+  list-style-type: none;
+  padding: 5px;
+  background-color: var(--primary-color-1);
+  color: var(--primary-color-3);
+  border-bottom: 1px solid var(--start-nav-text-shadow);
+  font-size: 16px;
+}
+.media-playlist i {
+  font-size: 14px;
+}
+.media-playlist button {
+  padding: 2px 5px;
+  border: 1px solid var(--primary-color-1);
+  background-color: var(--primary-color-1);
+  color: var(--primary-color-2);
+}
+.media-playlist button:hover {
+  border: 1px solid var(--primary-color-3);
+  border-radius: 4px;
+}
+
+/* AUDIO Media Player */
+.main-media-audio {
+  border-top: 1px solid var(--primary-color-2);
+  padding-top: 20px;
+}
+/* audio analyzer */
+#canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+  margin-top: 1em;
+  border: 1px solid var(--primary-color-2);
+  background-color: #02020280;
+  width: 80%;
+  height: 30vh;
+}
+/* audio panel */
+#audioElement {
+  padding: 0;
+  margin: auto;
+  display: block;
+  margin-top: 1em;
+  width: 70%;
+  height: 5vh;
+  border: 1px solid var(--primary-color-3);
+  border-radius: 2px;
+}
+
+
+/* VIDEO Media Player */
+.main-media-video {
+  border-top: 1px solid var(--primary-color-2);
+  padding-top: 20px;
+}
+#videoElement {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 148px;
+  background-color: #000;
+}
+
+
+/*-----------------------------------------------------   
+    Smart version > 420px                         
+    420px / 16px/em = 26,25em 
+------------------------------------------------------*/
+@media screen and (min-width: 26em) {
+/*-----------------------------------------------------   
+ Media Player
+------------------------------------------------------*/
+.audio-video-app a {
+  padding: 10px 30px;
+  font-size: 20px;
+}
+/* AUDIO Media Player */
+
+/* VIDEO Media Player */
+#videoElement {
+  width: 90%;
+  height: 220px;
+}
+}
+
+
+/*-----------------------------------------------------   
+    Tablet version from 640 pixel                          
+    640px / 16px/em = 40em  
+------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+/*-----------------------------------------------------   
+ Media Player
+------------------------------------------------------*/
+.audio-video-app a {
+  padding: 10px 40px;
+  font-size: 22px;
+}
+.fileUpload input {
+  font-size: 0.8rem;
+}
+#controls button {
+  margin: 6px; 
+}
+#controls i {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.media-playlist h2 {
+  font-size: 20px;
+}
+.media-playlist li {
+  font-size: 18px;
+}
+.media-playlist i {
+  font-size: 16px;
+}
+
+/* AUDIO Media Player */
+#canvas {
+  margin-top: 1em;
+  height: 37vh;
+}
+/* audio panel */
+#audioElement {
+  margin-top: 1em;
+  width: 75%;
+  height: 6vh;
+}
+
+/* VIDEO Media Player */
+#videoElement {
+  width: 90%;   /* 600px */
+  height: 330px;
+}
+}
+
+
+/*------------------------------------------------------------------
+    Screens from 1024 pixels                         
+    1024px / 16px/em = 64em	
+------------------------------------------------------------------- */
+@media screen and (min-width: 64em) {
+/*-----------------------------------------------------   
+ Media Player
+------------------------------------------------------*/
+.audio-video-app a {
+  padding: 10px 60px;
+  font-size: 24px;
+}
+.fileUpload {
+  margin: 10px;
+}
+.fileUpload input {
+  font-size: 1rem;
+}
+#controls {
+  border: 1px solid var(--primary-color-2);
+}
+#controls button {
+  margin: 10px;            
+}
+.media-playlist h2 {
+  padding: 15px;
+}
+.media-playlist li {
+  padding: 10px;
+}
+/* AUDIO Media Player */
+.main-media-audio {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.main-media-audio .box-media-audio {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#canvas {
+  height: 30vh;
+}
+/* audio panel */
+#audioElement {
+  height: 5vh;
+}
+/* VIDEO Media Player */
+.main-media-video {
+  margin-bottom: 50px;
+}
+#videoElement {
+  width: 90%;
+  height: 500px;
+}
+.main-media-video .video-box {
+  margin-left: 5vw;
+}
+.main-media-video .video-box-control {
+  margin-left: 10vw;
+}
+.main-media-video .video-box-playlist {
+  margin-left: 10vw;
+}
+}
+
+
+/*------------------------------------------------------------------- 
+    Large screens (>1600 pixels) 
+    1600px / 16px/em = 100em
+-------------------------------------------------------------------- */
+@media screen and (min-width: 100em) {
+/*-----------------------------------------------------   
+ Media Player
+------------------------------------------------------*/
+.audio-video-app a {
+  font-size: 22px;
+}
+.fileUpload input {
+  font-size: 0.8rem;
+}
+#controls i {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.media-playlist h2 {
+  font-size: 20px;
+}
+.media-playlist li {
+  font-size: 18px;
+}
+.media-playlist i {
+  font-size: 16px;
+}
+/* AUDIO Media Player */
+#canvas {
+  height: 37vh;
+}
+/* audio panel */
+#audioElement {
+  height: 6vh;
+}
+/* VIDEO Media Player */
+.main-media-video {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.main-media-video .box-media-video {
+  width: 50%;
+}
+#videoElement {
+  width: 90%;
+  height: 400px;
+}
+.main-media-video .video-box {
+  margin-left: 0px;
+}
+.main-media-video .video-box-control {
+  margin-left: 0px;
+}
+.main-media-video .video-box-playlist {
+  margin-left: 0px;
+}
+}

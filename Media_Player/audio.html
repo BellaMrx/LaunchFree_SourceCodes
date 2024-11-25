@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- FontAwesome-->
+      <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style_media.css">
+      <title>Media Player - LaunchFree.net</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="main-headline">Media - Audio</h1>
+        </header>
+        <!-- Audio - main -->
+        <main class="container">
+          <div class="audio-video-app">
+            <a href="#audio" class="main-nav-link active" title="Music"><i class="fa-solid fa-music"></i></a>
+            <a href="video.html" class="main-nav-link fade-in" title="Video"><i class="fa-solid fa-film"></i></a>         
+          </div>
+          <!-- visuel -->
+          <div class="main-media-audio">  <!-- container -->
+            <div class="box-media-audio">
+              <canvas id="canvas" title="Audio Analyzer"></canvas>
+              <!-- hide audio panel -->
+              <audio id="audioElement">
+                This web browser does not support audio tag.
+              </audio>
+              <!-- file upload -->
+              <div class="fileUpload"> 
+                <input id="audioFile" type="file" accept="audio/*" />
+              </div>
+              <div id="controls">
+                <!-- button control panel -->
+                <div>
+                  <button onclick="play()" id="play" title="Play"><i class="fa-solid fa-play"></i></button>
+                  <button onclick="backward()" id="backward-title" title="Backward"><i class="fa-solid fa-backward-step"></i></button>
+                  <button onclick="forward()" id="forward-title" title="Forward"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+                <div>
+                  <button onclick="control()" id="ctrl" title="Display controls"><i class="fa-solid fa-sliders"></i></button>
+                  <button onclick="rewind()" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                  <button onclick="mute()" id="mute" title="Mute"><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+                <div class="speedRate">
+                  <button onclick="fast()" id="fast" title="Playback rate: +0.1"><i class="fa-solid fa-angles-up"></i></button>
+                  <button onclick="norm()" id="norm" title="Playback rate: normal"><i class="fa-solid fa-gauge"></i></button>
+                  <button onclick="slow()" id="slow" title="Playback rate: -0.1"><i class="fa-solid fa-angles-down"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="box-media-audio">
+              <div class="media-playlist">
+                <h2>Playlist</h2>
+                <ul id="playlist">
+                  <!-- track -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="script_media_audio.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar - LaunchFree.net</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- all -->
+      <div class="calendar" id="event_calendar">
+        <!-- event card -->
+        <!-- event card - header -->
+        <div class="event-card" id="event_Card">
+          <span class="open-event-card-exit" id="open_Event_Card_Exit">&times;</span>
+          <span class="event-card-title-date" id="event_Card_Title_Date">MAY 4 2023</span>
+          <div class="event-card-content">
+            <!-- event card - info - number of events and the add btn for new events -->
+            <div class="event-card-info">
+              <span class="event-card-number-events" id="event_Card_Number_Events">No events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="add-new-event-btn" id="add_New_Event_btn" data-date>Add new event?</span>
+            </div>
+            <!-- add a new event box -->
+            <div class="add-new-event-box" id="add_New_Event_Box" data-active="false">
+              <div class="row">
+                <div class="half">
+                  <label class="event-box-label">
+                     Name of event
+                    <input type="text" class="event-box-inputs event-box-inputs_wide" placeholder="New event" id="input_Event_Name">           
+                  </label>
+                </div>
+                <div class="quarter">
+                  <label class="event-box-label">
+                    Start Time
+                    <input type="text" class="event-box-inputs" placeholder="9:30" id="input_Event_Start_Time" data-options="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23" data-format="datetime">
+                  <!-- Time US format script.js
+                    <input type="text" class="event-box-inputs" placeholder="8:15" id="input_Event_Start_Time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                    <input type="text" class="event-box-inputs" placeholder="am" id="input_Event_Start_am-pm" data-options="a,p,am,pm">
+                  -->
+                  </label>
+                </div>
+                <div class="quarter">
+                  <label class="event-box-label">
+                    End Time
+                    <input type="text" class="event-box-inputs" placeholder="10" id="input_Event_End_Time" data-options="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23" data-format="datetime">
+                  <!-- Time US format script.js
+                    <input type="text" class="event-box-inputs" placeholder="9" id="input_Event_End_Time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                    <input type="text" class="event-box-inputs" placeholder="am" id="input_Event_End_am-pm" data-options="a,p,am,pm">
+                  -->
+                  </label>
+                </div>
+                <div class="half">
+                  <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="save_Event" class="save-event-btn event-btn">save</a>
+                  <a tabindex="0" id="cancel_Event" class="cancel-event-btn event-btn">cancel</a>
+                </div>
+              </div>
+            </div>
+            <!-- active events in the event box -->
+            <div id="list_Active_Events" class="active-events-list">
+              
+            </div>
+            <!-- quotes in the event box when no events are available -->
+            <div class="event-card-quote" id="quote_Event_Card">
+              The best calendar syncing tool in the planet.
+            </div>
+          </div>
+        </div>
+        <!-- pure calendar -->
+        <div class="calendar-main">
+          <div class="calendar-month-header">
+            <span class="calendar-header-last-month" id="calendar_Header_Last_Month">Apr</span>
+            <span class="calendar-header-current-month" id="calendar_Header_Current_Month">May</span>
+            <span class="calendar-header-next-month" id="calendar_Header_Next_Month">Jun</span>
+            <div class="header-date">
+              <span><span id="header_Current_Date" class="header-current-date">Today is May 30</span></span>    
+            </div>
+          </div>
+          <div class="calender-head-days">Sun</div>
+          <div class="calender-head-days">Mon</div>
+          <div class="calender-head-days">Tue</div>
+          <div class="calender-head-days">Wed</div>
+          <div class="calender-head-days">Thu</div>
+          <div class="calender-head-days">Fri</div>
+          <div class="calender-head-days">Sat</div>
+          <div class="calendar-main" id="dates">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script-EU-time.js"></script>
+  </body>
+</html>

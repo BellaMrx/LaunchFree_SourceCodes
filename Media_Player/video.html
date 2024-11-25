@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- FontAwesome-->
+      <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style_media.css">
+      <title>Media Player - code-universe.net</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="main-headline">Media - Video</h1>
+        </header>
+        <!-- Video - main -->
+        <main class="container">
+          <div class="audio-video-app">
+              <a href="audio.html" class="main-nav-link fade-in" title="Music"><i class="fa-solid fa-music"></i></a>
+              <a href="#video" class="main-nav-link active" title="Video"><i class="fa-solid fa-film"></i></a>         
+          </div>
+          <!-- visuel -->
+          <div class="main-media-video">  <!-- container -->
+            <div class="box-media-video">
+              <div class="video-box">
+                <!-- Video Element -->
+                <video id="videoElement" controls>
+                  This web browser does not support video tag.
+                </video>
+              </div>
+              <div class="video-box-control">
+                <!-- file upload -->
+                <div class="fileUpload"> 
+                  <input id="videoFile" type="file" accept="video/*" />
+                </div>
+                <div id="controls">
+                  <!-- button control panel -->
+                  <div>
+                    <button onclick="play()" id="play" title="Play"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="backward()" id="backward-title" title="Backward"><i class="fa-solid fa-backward-step"></i></button>
+                    <button onclick="forward()" id="forward-title" title="Forward"><i class="fa-solid fa-forward-step"></i></button>
+                  </div>
+                  <div>
+                    <button onclick="control()" id="ctrl" title="Display controls"><i class="fa-solid fa-sliders"></i></button>
+                    <button onclick="rewind()" title="Return"><i class="fa-solid fa-rotate-left"></i></button>
+                    <button onclick="mute()" id="mute" title="Mute"><i class="fa-solid fa-volume-xmark"></i></button>
+                  </div>
+                  <!--
+                  <div class="speedRate">
+                    <button onclick="fast()" id="fast" title="Playback rate: +0.1"><i class="fa-solid fa-angles-up"></i></button>
+                    <button onclick="norm()" id="norm" title="Playback rate: normal"><i class="fa-solid fa-gauge"></i></button>
+                    <button onclick="slow()" id="slow" title="Playback rate: -0.1"><i class="fa-solid fa-angles-down"></i></button>
+                  </div>
+                  -->
+                </div> 
+              </div>
+            </div>
+              <div class="box-media-video">
+                <div class="video-box-playlist">
+                  <div class="media-playlist">
+                    <h2>Playlist</h2>
+                    <ul id="playlist">
+                      <!-- video -->
+                    </ul>
+                  </div>
+                </div>
+              </div>   
+          </div>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="script_media_video.js"></script>
+  </body>
+</html>

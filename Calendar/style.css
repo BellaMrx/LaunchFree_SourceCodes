@@ -1,0 +1,1094 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+        General basic settings                              
+ ----------------------------------------------------*/
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Arial, 'Courier New', sans-serif;
+    background-color: #fff;
+}
+
+/* --------------------------------------------------
+   General settings - Desktop full screen view                             
+ ----------------------------------------------------*/
+.container {
+	width: 100%;
+    display: block;
+}
+/* header */
+.header {
+    width: 100%;
+    padding: 10px;
+    background-color: #555;
+
+    box-shadow: inset 0 -2px 2px #222;
+}
+.header h1 {
+    color: #fff;
+    text-shadow: 1px 1px #237788, 2px 2px #237788, 3px 3px #237788;
+}
+.calendar-main {
+    width: 75%;
+    float: right;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    box-shadow: 10px 0 5px -2px #555;
+}
+.calendar-main #dates {
+    width: 100%;
+  /*   height: 100vh; */
+}
+/* header month */
+.calendar-month-header {
+    background-color: #237788;
+    border: 1px solid #237788;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 30px 40px 30px;
+    text-transform: uppercase;
+    
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.calendar-header-last-month,.calendar-header-next-month,.calendar-header-current-month {
+    width: 33.33333%;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+  .calendar-header-last-month:hover,.calendar-header-next-month:hover {
+    color: #fff;
+    text-shadow: -1px -1px #666, -2px -2px #444, -3px -3px #000;
+  }
+  .calendar-header-current-month {
+    color: #fff;
+    text-shadow: -1px -1px #444, -2px -2px #444;
+    font-size: 26px;
+    cursor: default;
+    animation: popIn 200ms 1 forwards;
+    transform: translateY(20px);
+    opacity: 0;
+    position: relative;
+  }
+  .calendar-month-header-reset {
+    animation: none;
+  }
+  .calendar-month-header-activate {
+    animation: popIn 100ms 1 forwards;
+  }
+  .calendar-spacer, .calender-head-days, .calendar-date {
+    width: 14.28571428571429%;
+    max-width: 14.28571428571429%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: clip;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  /* calendar header-date */
+  .header-date {
+    width: 15%;
+    top: 65px;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4%;
+    color: #fff;
+    background-color: #237788;
+    border: 1px solid #237788;
+    box-shadow: 0px 2px 2px #555;
+  }
+  .header-date:hover {
+    width: 15%;
+    color: #237788;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0px 2px 2px #000;
+  }
+  .header-current-date {
+    cursor: pointer;
+  }
+
+.calender-head-days {
+    padding: 6px 4px 8px 4px;
+}
+.calendar-date {
+    margin-top: 2%;
+
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+  .calendar-date:hover::before {
+    background: #99999933;
+  }
+  .calendar-date.today {
+    color: #237788;  
+  }
+  .calendar-date.today::before {
+    animation: popIn 200ms 1 forwards;
+    background-color: #55555533;
+    transform: scale(0);
+  }
+  @keyframes popIn {
+    100%{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .calendar-date::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    transform: scale(0.8);
+    z-index: 0;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    border-radius: 30%;
+    animation: popIn 200ms 1 forwards;
+    background: #237788;
+    transform: scale(0);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+  }
+
+/* event card */
+  /* event card - header */
+.event-card {
+	  width: 25%;
+	  float: left;
+    min-height: 50vh;
+    height: 100vh;
+    background-color: #555;
+    box-shadow: inset -1px 0px 1px 1px #222;
+}
+.event-card-content {
+    width: 100%;
+    padding-top: 55px;
+}
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    position: absolute;
+    top: 24px;
+    line-height: 1em;
+    left: 22px;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: #237788;      	 
+    color: #fff;                      
+    border: 1px solid #237788;
+    border-radius: 4px;
+    padding: 0px 3px;
+    cursor: pointer;
+    opacity: 0;
+    animation: popIn 200ms 1 forwards;
+    text-transform: uppercase;
+    visibility: hidden;
+  }
+  .open-event-card-exit:hover {
+    background-color: #fff;
+    color: #237788;
+    border: 1px solid #237788;
+  }
+  .event-card-title-date {
+    display: block;
+    float: right;
+    margin: 10px;
+
+    font-size: 22px;
+    text-shadow: 1px 1px #237788, 2px 2px #237788, 3px 3px #237788;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box{
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #fff;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  /* add new event link/btn */
+  #add_New_Event_btn {
+    color: #237788;
+    border-color: #237788;
+  }
+/* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    color: #237788;
+    background-color: #fff;
+    border: 2px solid #237788;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    box-shadow: 0px 5px 5px  #02020280;
+  }
+  .add-new-event-box[data-active="true"]{
+    display: block;
+    animation: popIn 250ms 1 forwards;
+  }
+  /* label in event box */
+  .event-box-label {
+    padding: 10px 0;
+    color: #237788;
+    font-weight: 400;
+    font-size: 16px;
+    color: #237788cc;
+  }
+  .event-box-inputs {
+    border: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 800;
+    border-bottom: 2px solid #555;
+    background: transparent;
+    outline: none;
+    font: inherit;
+    display: block;
+    margin: 4px 0;
+    max-width: 70%;
+  }
+
+  .event-box-inputs_wide {
+    max-width: 90%;
+  }
+  .event-box-input_error, input.event-box-input_error {
+    border-color: #ff5050;
+    animation: shake 300ms 1 forwards;
+  }
+  @keyframes shake {
+    20%, 60%{
+      transform: translateX(4px);
+    }
+    40%, 80%{
+      transform: translateX(-4px);
+    }
+  }
+  input.event-box-inputs::-webkit-input-placeholder {
+     color: #cccccccc;
+  }
+  
+  input.event-box-inputs:-moz-placeholder { /* Firefox 18- */
+     color: #cccccccc;  
+  }
+  
+  input.event-box-inputs:-moz-placeholder {  /* Firefox 19+ */
+     color: #cccccccc;  
+  }
+  
+  input.event-box-inputs:-ms-input-placeholder {  
+     color: #cccccccc;  
+  }
+
+  /* event box button - save, cancel */
+  .event-btn {
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1.5px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    width: 65px;
+    margin: 5px 0;
+    text-align: center;
+  }
+  .save-event-btn {
+    border-color: #fff;
+    background: #237788;
+    color: #fff;
+  }
+  .cancel-event-btn {
+    background: #ee3333;
+    color: #fff;
+  }
+  .save-event-btn:hover, .cancel-event-btn:focus{
+    background: #237788ae;
+    box-shadow: 0px -1px 2px #ddd;
+  }
+  .cancel-event-btn:hover, .cancel-event-btn:focus{
+    background: #bd1b1b;
+    box-shadow: 0px -1px 2px #ddd;
+  }
+
+  .event-card-info .add-new-event-btn {
+    border-bottom: 2px solid #222;
+    padding: 0;
+    cursor: pointer;
+  }
+
+/* event card - slogan/quote */
+.event-card-quote {
+    margin: 10px;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #777;
+    line-height: 1.1em;
+    z-index: 0;          /* -1 */
+}
+
+/* active events in the event box */
+.active-events-list-ul {
+    list-style: none;
+    margin: auto;
+    width: 95%;
+    padding: 0;
+    max-height: 500px;
+    height: 600px;
+    overflow: auto;
+}
+  .active-events-list-ul li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 1px 1px  #02020280;
+    position: relative;
+  }
+
+/* ids script.js */
+  /* event entry */
+  .event-dates {
+    color: #237788;
+    font-size: 18px;
+    text-transform: lowercase;
+  }
+  /* event entry "through" */
+  .event-dates small {
+    font-size: 0.65em;
+    color: #444;
+  }
+  /* event delete btn */
+  .event-delete {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ee3333;
+    border: 2px solid #ee3333;
+    border-radius: 4px;
+    padding: 1px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  .event-delete:hover, .event-delete:focus{
+    background-color: #fff;
+    color: #ee3333;
+    box-shadow: 0px -1px 2px #222;
+  }
+  /* event entry name */
+  .event-name {
+    font-size: 19px;
+    color: #555;
+    padding:10px;
+    background: #f7f7f7;
+    margin: 2px 0;
+    display: block;
+    text-transform: initial;
+  }
+
+
+
+/* -------------------------------------
+  /* event box screen 
+  /* arrangement save and cancel btn 
+  .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.row .quarter {
+    width: 40%;
+}
+.row .half {
+    width: 100%;
+}
+  /* large view  800px 
+  @media (min-width: 3000px) {
+    .row {
+      flex-wrap: nowrap;
+    }
+    .row .half {
+      width: 35%;
+    }
+    .row .quarter {
+      width: 25%;
+    }
+  }
+
+-------------------------------------- */
+
+
+
+/* min-width 880px / max-width 1280px */
+@media only screen and (min-width: 55em) and (max-width: 80em) { 
+  .header {
+    box-shadow: inset 0 -2px 2px #222;
+  }
+  .calendar-main {
+    width: 70%;
+    float: right;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    box-shadow: 10px 0 5px -2px #555;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+	width: 30%;
+	float: left;
+    min-height: 50vh;
+    height: 100vh;
+    box-shadow: inset -1px 0px 1px 1px #222;
+    background-color: #555;
+  }
+  .event-card-title-date {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box{
+    background: #fff;
+    color: #555;
+  }
+  /* add a new event box */
+  .add-new-event-box {
+    color: #237788;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #02020280;
+  }
+  /* label in event box */
+  .event-box-label {
+    color: #237788;
+    color: #237788cc;
+  }
+  .event-box-inputs {
+    color: #555;
+    border-bottom: 2px solid #555;
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    max-height: 400px;
+    height: 500px;
+  }
+  .active-events-list-ul li {
+    background-color: #fff;
+    border: 2px solid #237788;
+    /* background: #237788; */
+    box-shadow: 0px 1px 1px  #02020280;
+  }
+  .save-event-btn {
+    border-color: #fff;
+    background: #237788;
+    color: #fff;
+  }
+  .save-event-btn:hover, .cancel-event-btn:focus{
+    background: #237788ae;	
+    box-shadow: 0px -1px 2px #ddd;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 20px;
+  }
+}
+/* min-width 560px / max-width 880px */
+@media only screen and (min-width: 35em) and (max-width: 55em) {
+   .calendar-main {
+	  width: 100%;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 15px;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+    position: absolute;
+    top: 100px;
+    left: 0%;
+    width: 70%;
+    height: 70%;
+    background: #ffffff;
+    box-shadow: 3px 12px 5px #02020229;
+    border: 2px solid #237788;
+    z-index: 2;
+    overflow: hidden;
+    transform: scale(0.9) translate(30px,30px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .event-card-content {
+    padding-top: 30px;
+  }
+  .event-card-title-date {
+    margin-top: 23px;
+    margin-left: 55px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #237788;
+    border-bottom: 2px solid #237788;
+    cursor: pointer;
+    text-shadow: 1px 1px #ddd, 2px 2px #ddd;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box {
+    position: absolute;
+    top: 12%;
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    font-size: 14px;
+
+  }
+  /* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    position: absolute;
+    top: 30%;
+    width: 92%;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #aaa;
+    color: #fff;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    z-index: 2;
+  }
+  /* open event-card */
+  .event-card_active {
+    animation: popIn 200ms 1 forwards;
+    visibility: visible;
+    display: flex;
+    transition: visibility 0ms;
+  }
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    visibility: visible;
+  }
+
+  /* calendar header-date */
+  .header-date {
+    width: 30%;
+  }
+  .header-date:hover {
+    width: 30%;
+  }
+  /* event card - slogan/quote */
+  .event-card-quote {
+    color: #ddd; 
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    max-height: 400px;
+    height: 500px;
+  }
+}
+
+
+/* min-width 400px / max-width 560px */
+@media only screen and (min-width: 25em) and (max-width: 35em) {
+  .calendar-main {
+    width: 100%;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 10px;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+    position: absolute;
+    top: 100px;
+    left: 0%;
+    width: 70%;
+    height: 70%;
+    background: #ffffff;
+    box-shadow: 3px 12px 5px #02020229;
+    border: 2px solid #237788;
+    z-index: 2;
+    overflow: hidden;
+    transform: scale(0.9) translate(30px,30px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .event-card-content {
+    padding-top: 5px;
+  }
+  .event-card-title-date {
+    margin-top: 23px;
+    margin-left: 55px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #237788;
+    border-bottom: 2px solid #237788;
+    cursor: pointer;
+    text-shadow: 1px 1px #ddd, 2px 2px #ddd;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box {
+    position: absolute;
+    top: 12%;
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    font-size: 14px;
+  }
+  /* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    position: absolute;
+    top: 30%;
+    width: 92%;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #aaa;
+    color: #fff;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    z-index: 2;
+  }
+  /* open event-card */
+  .event-card_active{
+    animation: popIn 200ms 1 forwards;
+    visibility: visible;
+    display: flex;
+    transition: visibility 0ms;
+  }
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    visibility: visible;
+  }
+   /* calendar header-date */
+  .header-date {
+    width: 30%;
+  }
+  .header-date:hover {
+    width: 30%;
+  }
+  /* event card - slogan/quote */
+  .event-card-quote {
+    color: #ddd; 
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    margin-top: 40px;
+    max-height: 400px;
+    height: 500px;
+  }
+}
+
+/* min-width 384px / max-width 400px */
+@media only screen and (min-width: 24em) and (max-width: 25em) {
+  .calendar-main {
+    width: 100%;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 10px;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+    position: absolute;
+    top: 150px;
+    left: 0%;
+    width: 85%;
+    height: 70%;
+    background: #ffffff;
+    box-shadow: 3px 12px 5px #02020229;
+    border: 2px solid #237788;
+    z-index: 2;
+    overflow: hidden;
+    transform: scale(0.9) translate(30px,30px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .event-card-content {
+    padding-top: 0px;
+  }
+  .event-card-title-date {
+    margin-top: 23px;
+    margin-left: 55px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #237788;
+    border-bottom: 2px solid #237788;
+    cursor: pointer;
+    text-shadow: 1px 1px #ddd, 2px 2px #ddd;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box {
+    position: absolute;
+    top: 10%;
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    font-size: 14px;
+
+  }
+  /* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    position: absolute;
+    top: 30%;
+    width: 92%;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #aaa;
+    color: #fff;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    z-index: 2;
+  }
+  /* open event-card */
+  .event-card_active{
+    animation: popIn 200ms 1 forwards;
+    visibility: visible;
+    display: flex;
+    transition: visibility 0ms;
+  }
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    visibility: visible;
+  }
+  /* calendar header-date */
+  .header-date {
+    width: 40%;
+    top: 80px;
+  }
+  .header-date:hover {
+    width: 40%;
+  } 
+  /* event card - slogan/quote */
+  .event-card-quote {
+    color: #ddd; 
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    margin-top: 50px;
+    max-height: 400px;
+    height: 500px;
+  }
+}
+
+
+/* min-width 280px / max-width 400px */
+@media only screen and (min-width: 18em) and (max-width: 24em) {
+  .calendar-main {
+    width: 100%;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 2px;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+    position: absolute;
+    top: 150px;
+    left: 0%;
+    width: 85%;
+    height: 70%;
+    background: #ffffff;
+    box-shadow: 3px 12px 5px #02020229;
+    border: 2px solid #237788;
+    z-index: 2;
+    overflow: hidden;
+    transform: scale(0.9) translate(30px,30px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .event-card-content {
+    padding-top: 60px;
+  }
+  .event-card-title-date {
+    margin-top: 23px;
+    margin-left: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #237788;
+    border-bottom: 2px solid #237788;
+    cursor: pointer;
+    text-shadow: 1px 1px #ddd, 2px 2px #ddd;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box {
+    position: absolute;
+    top: 18%;
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    font-size: 14px;
+  }
+  /* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    position: absolute;
+    top: 30%;
+    width: 92%;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #aaa;
+    color: #fff;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    z-index: 2;
+  }
+  /* open event-card */
+  .event-card_active{
+    animation: popIn 200ms 1 forwards;
+    visibility: visible;
+    display: flex;
+    transition: visibility 0ms;
+  }
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    visibility: visible;
+  }
+  /* calendar header-date */
+  .header-date {
+    width: 45%;
+    top: 90px;
+  }
+  .header-date:hover {
+    width: 45%;
+  }
+  /* event card - slogan/quote */
+  .event-card-quote {
+    color: #ddd; 
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    margin-top: 30px;
+    max-height: 400px;
+    height: 500px;
+  }
+}
+
+
+/* min-width 160px / max-width 280px */
+@media only screen and (min-width: 10em) and (max-width: 18em) {
+  .calendar-main {
+    width: 100%;
+    color: #555;              /*   color number date calendar  */
+    background-color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  /* event marker in calendar */
+  .calendar-event-marks::after {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    left: 2px;
+  }
+  /* event card */
+  /* event card - header */
+  .event-card {
+    position: absolute;
+    top: 150px;
+    left: 0%;
+    width: 95%;
+    height: 70%;
+    background: #ffffff;
+    box-shadow: 3px 12px 5px #02020229;
+    border: 2px solid #237788;
+    z-index: 2;
+    overflow: hidden;
+    transform: scale(0.9) translate(30px,30px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .event-card-content {
+    padding-top: 20px;
+  }
+  .event-card-title-date {
+    margin-top: 23px;
+    margin-left: 55px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: #237788;
+    border-bottom: 2px solid #237788;
+    cursor: pointer;
+    text-shadow: 1px 1px #ddd, 2px 2px #ddd;
+  }
+  /* event card - info - number of events and the add btn for new events */
+  .event-card-info, .add-new-event-box {
+    position: absolute;
+    top: 15%;
+    padding: 8px 10px;
+    margin: 12px 15px;
+    border-radius: 4px;
+    background: #eee;
+    color: #000;
+    font-size: 14px;
+
+  }
+  /* event box */
+  /* add a new event box */
+  .add-new-event-box {
+    position: absolute;
+    top: 30%;
+    width: 92%;
+    background-color: #fff;
+    border: 2px solid #237788;
+    box-shadow: 0px 5px 5px  #aaa;
+    color: #fff;
+    padding: 16px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    z-index: 2;
+  }
+  /* open event-card */
+  .event-card_active{
+    animation: popIn 200ms 1 forwards;
+    visibility: visible;
+    display: flex;
+    transition: visibility 0ms;
+  }
+  /* event card - exit and title-date */
+  .open-event-card-exit {
+    visibility: visible;
+  }
+  /* calendar header-date */
+  .header-date {
+    width: 50%;
+    top: 90px;
+  }
+  .header-date:hover {
+    width: 50%;
+  }
+  /* event card - slogan/quote */
+  .event-card-quote {
+    color: #ddd; 
+  }
+  /* active events in the event box */
+  .active-events-list-ul {
+    margin-top: 30px;
+    max-height: 400px;
+    height: 500px;
+  }
+}
