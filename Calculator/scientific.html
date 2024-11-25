@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- FontAwesome-->
+      <link href="../../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="../../assets/fontawesome/css/brands.css" rel="stylesheet">
+      <link href="../../assets/fontawesome/css/solid.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style_calculator.css">
+      <title>Calculator - LaunchFree.net</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="main-headline">Scientific</h1>
+        </header>
+        <!--  main -->
+        <main class="container">
+          <div class="calculator-app">
+            <a href="calculator.html" class="main-nav-link fade-in" title="Default"><i class="fa-solid fa-calculator"></i></a>
+            <a href="#scientific" class="main-nav-link active" title="Scientific"><i class="fa-solid fa-atom"></i></a>         
+          </div>
+          <!-- container -->
+          <div class="main-calculator">
+            <div class="box-scientific">
+              <table class="scientific-table">
+                <thead>			
+                  <tr>
+                    <td colspan="7">
+                      <div class="form-group">
+                        <!-- class="calc" js -->
+                        <textarea class="calc form-control" name="txt" readonly="" rows="2" cols="30" wrap="hard" maxlength="10"></textarea>
+                      </div>				
+                    </td>
+                  </tr>
+                </thead>
+                <tbody class="actions">		<!-- actions js -->
+                  <tr>
+                    <td colspan="3"></td>
+                    <td class="operator"><button class="btn btn-op" data-value="ce">CE</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="(">(</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value=")">)</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="%">%</button></td>
+                  </tr>
+                  <tr>
+                    <td class="calc-num"><button class="btn" data-value="7">7</button></td>
+                    <td class="calc-num"><button class="btn" data-value="8">8</button></td>
+                    <td class="calc-num"><button class="btn" data-value="9">9</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="/">&#x00f7;</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="inv">Inv</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="sin">sin</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="ln">ln</button></td>
+                  </tr>			
+                  <tr>
+                    <td class="calc-num"><button class="btn" data-value="4">4</button></td>
+                    <td class="calc-num"><button class="btn" data-value="5">5</button></td>
+                    <td class="calc-num"><button class="btn" data-value="6">6</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="*">	&times;</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="*3.14">&pi;</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="cos">cos</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="log">log</button></td>
+                  </tr>
+                  <tr>
+                    <td class="calc-num"><button class="btn" data-value="3">3</button></td>
+                    <td class="calc-num"><button class="btn" data-value="2">2</button></td>
+                    <td class="calc-num"><button class="btn" data-value="1">1</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="-">-</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="e">e</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="tan">tan</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="radic">&radic;</button></td>
+                  </tr>
+                  <tr>
+                    <td class="calc-num"><button class="btn" data-value=".">.</button></td>
+                    <td class="calc-num"><button class="btn" data-value="0">0</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="=">=</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="+">+</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="exp">EXP</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="x^2">x&#xb2;</button></td>
+                    <td class="operator"><button class="btn btn-op" data-value="**">x&#94;</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="script_scientific.js"></script>
+  </body>
+</html>

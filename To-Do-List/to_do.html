@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- FontAwesome-->
+      <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
+      <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style_to_do.css">
+      <title>To-Do-List - LaunchFree.net</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="main-headline">To-Do-List</h1>
+        </header>
+        <!-- to-do-list - main -->
+        <main class="container">
+          <div class="container-to-do">
+            <div class="main-to-do">
+              <!-- Area for adding a new to-do list -->
+              <div class="new-list-container">
+                <input type="text" id="list-title-input" placeholder="New list title...">
+                <button class="createList" onclick="createTodoList()">Create list</button>
+              </div>        
+              <!-- Area in which all to-do lists are displayed -->
+              <div id="todo-lists-container">
+
+              </div>
+            </div>
+          </div>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="script_to_do.js"></script>
+  </body>
+</html>

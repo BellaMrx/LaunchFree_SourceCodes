@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+:root {
+  --primary-color-1: #333;
+  --primary-color-2: #00ff33;
+  --primary-color-2-darkest: color-mix(in srgb,var(--primary-color-2),#000 15%);
+  --primary-color-3: #999;
+  --start-nav-text-shadow: #222;
+  
+  --primary-color-4: #fff;
+  --primary-color-5: #ccc;
+  --table-color-1: #222;
+  --table-color-2: #444;
+  --shadow-color-dark-light: #000; 
+}
+
+/* ------------------------------------------
+  GENERAL BASIC SETTINGS  
+    (smartphone > 640px)
+-------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-color-1);
+  margin: 1em 3rem;
+}
+/* -----------------------------------------------------------
+  To-Do
+-----------------------------------------------------------*/
+.container h1 {
+  color: var(--primary-color-2);
+}
+.container-to-do {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--primary-color-1);
+}
+.main-to-do {
+    width: 100%;
+    margin-top: 10px;
+    padding: 30px;
+}
+.new-list-container, .input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+/* input list title "New list title..." */
+#list-title-input, #todo-input {
+  flex: 1;
+  padding: 4px;
+  font-size: 16px;
+  color: var(--primary-color-3);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  outline: none
+}
+#list-title-input[type=text]:focus {
+  border: 2px solid var(--primary-color-2);
+}
+/* "Create list" button */
+.createList {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: var(--primary-color-2);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+.todo-list-container {
+  background-color: var(--primary-color-1);
+  padding: 20px;
+  border: 1px solid var(--shadow-color-dark-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color-dark-light);
+  margin-bottom: 20px;
+}
+.todo-list-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color-3);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* delete list button */
+.delete-list-btn {
+  padding: 6px 8px ;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color-2);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+/* input "Add new task..." */
+.input-container input {
+  padding: 4px;
+  font-size: 16px;
+  color: var(--primary-color-3);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  outline: none
+}
+.input-container input[type=text]:focus {
+  border: 2px solid var(--primary-color-2);
+}
+/* "Add" button */
+.input-container button {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: var(--primary-color-2);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+/* lists to-do's*/
+#todo-lists-container ul {
+  list-style: none;
+  margin-top: 10px;
+}
+#todo-lists-container li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--primary-color-2);
+}
+.todo-checkbox {
+  margin-right: 10px;
+  accent-color: var(--primary-color-2);
+}
+.todo-text {
+  flex: 1;
+  color: var(--primary-color-3);
+}
+.completed .todo-text {
+  text-decoration: line-through;
+  color: #666;
+}
+/* delete task button */
+.delete-btn {
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color-2);
+  background-color: var(--primary-color-1);
+  border: 1px solid var(--primary-color-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+/* :hover all buttons */
+.createList:hover, .delete-list-btn:hover, .input-container button:hover, .delete-btn:hover {
+    color: var(--primary-color-1);
+    background-color: var(--primary-color-2);
+}
+/* -----------------------------------------------------------
+  To-Do - end
+------------------------------------------------------------*/
+
+
+
+
+/*-----------------------------------------------------   
+    Smart version > 420px                         
+    420px / 16px/em = 26,25em  / only for header
+------------------------------------------------------*/
+@media screen and (min-width: 26em) {
+  /* -----------------------------------------------------------
+   To-Do
+  ------------------------------------------------------------*/
+
+  /* -----------------------------------------------------------
+   To-Do - end
+  ------------------------------------------------------------*/
+}
+
+
+
+/*-----------------------------------------------------   
+    Tablet version from 640 pixel                          
+    640px / 16px/em = 40em  
+------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+  /* -----------------------------------------------------------
+   To-Do
+  ------------------------------------------------------------*/
+  #todo-lists-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  /* -----------------------------------------------------------
+   To-Do - end
+  ------------------------------------------------------------*/
+}
+
+
+
+/*------------------------------------------------------------------
+    Screens from 1024 pixels                         
+    1024px / 16px/em = 64em	
+------------------------------------------------------------------- */
+@media screen and (min-width: 64em) {
+  /* -----------------------------------------------------------
+   To-Do
+  ------------------------------------------------------------*/
+
+  /* -----------------------------------------------------------
+   To-Do - end
+  ------------------------------------------------------------*/
+}
+
+
+
+/*------------------------------------------------------------------- 
+    Large screens (>1600 pixels) 
+    1600px / 16px/em = 100em
+-------------------------------------------------------------------- */
+@media screen and (min-width: 100em) {
+  /* -----------------------------------------------------------
+   To-Do
+  ------------------------------------------------------------*/
+  /* input list title "New list title...", #todo-input? */
+  #list-title-input, #todo-input {
+    font-size: 18px;
+  }
+  /* "Create list" button */
+  .createList {
+    font-size: 18px;
+  }
+  .todo-list-title {
+    font-size: 22px;
+  }
+  /* delete list button */
+  .delete-list-btn {
+    font-size: 18px;
+  }
+  /* input "Add new task..." */
+  .input-container input {
+    font-size: 18px;
+  }
+  /* "Add" button */
+  .input-container button {
+    font-size: 18px;
+  }
+  /* delete task button */
+  .delete-btn {
+    font-size: 18px;
+  }
+  /* -----------------------------------------------------------
+   To-Do - end
+  ------------------------------------------------------------*/
+}
