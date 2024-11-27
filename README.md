@@ -12,6 +12,8 @@
 
  - To-Do-List - [LaunchFree.net](https://launchfree.net/sites/to-do-list/to_do.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/Calculator) --> HTML, CSS, JavaScript
 
+ - Password generator - [LaunchFree.net](https://launchfree.net/sites/pw_generator/pass_gen.html) / [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Password_Generator) --> HTML, CSS, JavaScript
+
 
 ## Games - [LaunchFree.net](https://launchfree.net/sites/games/games.html)
 
