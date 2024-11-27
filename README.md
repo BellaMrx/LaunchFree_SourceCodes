@@ -17,15 +17,15 @@
 
 ## Games - [LaunchFree.net](https://launchfree.net/sites/games/games.html)
 
- - Rock, Paper, Scissors, Lizard, Spock [GitHub](https://github.com/BellaMrx/rock_paper_scissor_lizard_spock) - game build with HTML, CSS, JavaScript
+ - Rock, Paper, Scissors, Lizard, Spock -> [GitHub](https://github.com/BellaMrx/rock_paper_scissor_lizard_spock) - game build with HTML, CSS, JavaScript
 
- - Breakout [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Breakout) - game build with HTML, CSS, JavaScript 
+ - Breakout -> [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Breakout) - game build with HTML, CSS, JavaScript 
 
- - Ping Pong [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Ping-Pong) -  game build with HTML, CSS, JavaScript 
+ - Ping Pong -> [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Ping-Pong) -  game build with HTML, CSS, JavaScript 
 
- - Snake [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Snake) - game build with HTML, CSS, JavaScript 
+ - Snake -> [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Snake) - game build with HTML, CSS, JavaScript 
 
- - Tic Tac Toe [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Tic_Tac_Toe) - game build with HTML, CSS, JavaScript
+ - Tic Tac Toe -> [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Tic_Tac_Toe) - game build with HTML, CSS, JavaScript
 
 
  ### ... more coming soon!
