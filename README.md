@@ -12,6 +12,8 @@
 
  - Password generator - [LaunchFree.net](https://launchfree.net/sites/pw_generator/pass_gen.html) / [GitHub](https://github.com/Projects-Games-HTML-CSS-JS/Password_Generator) --> HTML, CSS, JavaScript
 
+ - Stopwatch - [LaunchFree.net](https://www.launchfree.net/sites/stopwatch/stopwatch.html) / [GitHub](https://github.com/BellaMrx/Stopwatch) --> HTML, CSS, JavaScript
+
 
 ## Games - [LaunchFree.net](https://launchfree.net/sites/games/games.html)
 
