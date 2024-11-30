@@ -2,8 +2,6 @@
 
  Source codes from [LaunchFree.net](https://launchfree.net/)
 
- The source code can be found in the respective folders.
-
  - Calculator - [LaunchFree.net](https://launchfree.net/sites/calculator/calculator.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/Calculator) --> HTML, CSS, JavaScript
 
  - Calendar - [LaunchFree.net](https://launchfree.net/sites/calendar/calendar.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/Calendar)--> HTML, CSS, JavaScript 
