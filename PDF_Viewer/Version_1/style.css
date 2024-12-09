@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.container input {
+  padding: 10px;
+}
+#pdf-object {
+    width: 100%;
+    min-height: 600px;
+}
