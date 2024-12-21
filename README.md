@@ -16,6 +16,7 @@
 
  - PDF-Viewer - [LaunchFree.net](https://launchfree.net/sites/pdf_viewer/pdf_viewer.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/PDF_Viewer) --> HTML, CSS, JavaScript
 
+ - QR-Code-Scanner - [LaunchFree.net](https://launchfree.net/sites/qr_code/qr_code.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/QR_Code_Scanner) --> HTML, CSS, JavaScript
 
 ## Games - [LaunchFree.net](https://launchfree.net/sites/games/games.html)
 
