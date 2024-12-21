@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>QR Code Scanner</title>
+  </head>
+  <body>
+    <div class="container">
+        <header class="header">
+          <h1>QR Code Scanner</h1>
+        </header>
+        <!-- main -->
+        <main class="main-qr-code-scanner-container">
+            <div class="container-qr-code-scanner">
+              <video class="qr-code-video" id="video" autoplay></video>
+              <canvas class="qr-code-canvas" id="canvas"></canvas>
+              <p class="qr-code-result" id="result">Scan a QR Code</p>
+            </div>
+
+        </main>
+        <!-- Footer -->
+        <footer>
+            <a target="_blank" href="https://github.com/BellaMrx" title="GitHub Profile"><span class="footer-span">BellaMrx</span></a>
+            <a target="_blank" href="https://twitter.com/bella_mrx" title="Twitter"><span class="footer-span">@bella_mrx</span></a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script src="script_qr_code.js"></script>
+  </body>
+</html>

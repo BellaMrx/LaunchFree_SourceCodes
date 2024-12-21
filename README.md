@@ -17,7 +17,6 @@
  - PDF-Viewer - [LaunchFree.net](https://launchfree.net/sites/pdf_viewer/pdf_viewer.html) / [GitHub](https://github.com/BellaMrx/LaunchFree_SourceCodes/tree/main/PDF_Viewer) --> HTML, CSS, JavaScript
 
 
-
 ## Games - [LaunchFree.net](https://launchfree.net/sites/games/games.html)
 
  - Rock, Paper, Scissors, Lizard, Spock -> [GitHub](https://github.com/BellaMrx/rock_paper_scissor_lizard_spock) - game build with HTML, CSS, JavaScript

@@ -1,0 +1,49 @@
+/* ------------------------------------------
+  GENERAL BASIC SETTINGS  
+    (smartphone > 640px)
+-------------------------------------------*/
+  .container {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .container-qr-code-scanner {
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+  }
+  .qr-code-video {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+  }
+  .qr-code-canvas {
+    display: none !important;
+  }
+  .qr-code-result {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+  }
+
+
+
+/*-----------------------------------------------------   
+    Tablet version from 640 pixel                          
+    640px / 16px/em = 40em  
+------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+  .container-qr-code-scanner {
+    margin: 0px auto;
+    margin-top: 10px;
+    width: 50%;
+  }
+  .qr-code-video {
+    /* center video element */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
+  }
+}
